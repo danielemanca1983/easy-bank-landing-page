@@ -2,7 +2,10 @@
 
     &__mobile__nav {
         width: 90%;
+        z-index: 100;
         left: 50%;
+        margin-top: 20px;
+        transform: translateX(-50%);
         border-radius: 4px;
         position: absolute;
         padding: 1.625rem;
