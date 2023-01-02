@@ -18,6 +18,9 @@ body {
   color: hsl(233deg, 8%, 62%);
   font-family: "Public Sans", sans-serif;
 }
+body.no-scroll {
+  overflow: hidden;
+}
 
 a, a:visited, a:hover {
   color: hsl(233deg, 8%, 62%);
@@ -69,7 +72,119 @@ ul {
     display: none;
   }
 }
+.has-fade {
+  visibility: hidden;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.fade-in {
+  -webkit-animation: fadeIn 0.2s ease-in-out forwards;
+          animation: fadeIn 0.2s ease-in-out forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.fade-out {
+  -webkit-animation: fadeOut 0.2s ease-in-out forwards;
+          animation: fadeOut 0.2s ease-in-out forwards;
+}
+
+.header__mobile__nav {
+  width: 90%;
+  z-index: 100;
+  left: 50%;
+  margin-top: 20px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  position: absolute;
+  padding: 1.625rem;
+  background: white;
+}
+.header__mobile__nav__link {
+  color: hsl(233deg, 26%, 24%);
+  display: block;
+  padding: 0.625rem;
+  text-align: center;
+}
+.header.open .overlay {
+  opacity: 1;
+}
+.header.open .header__hamburger-menu > span:first-child {
+  transform: rotate(45deg);
+}
+.header.open .header__hamburger-menu > span:nth-child(2) {
+  opacity: 0;
+}
+.header.open .header__hamburger-menu > span:last-child {
+  transform: rotate(-45deg);
+}
+.header .overlay {
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  position: fixed;
+  opacity: 0;
+  background-image: linear-gradient(hsl(233deg, 26%, 24%), transparent);
+}
 .header nav {
+  background-color: white;
   padding: 1.065rem 1.5rem;
 }
 .header__logo img {
@@ -81,9 +196,11 @@ ul {
   height: 2px;
   display: block;
   background-color: hsl(233deg, 26%, 24%);
+  transition: all 0.3s ease-in-out;
+  transform-origin: 3px 1px;
 }
 .header__hamburger-menu > span:not(:last-child) {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 .header__links {
   font-size: 0.875rem;

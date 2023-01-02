@@ -14,11 +14,12 @@
 
   <!-- Header -->
   <header class="header">
-    <nav class="flex flex--justify-content-space-between flex--align-items-center">
+    <div class="overlay has-fade"></div>
+    <nav class="flex flex--justify-content-space-between flex--align-items-center container">
       <a href="/" class="header__logo">
         <img src="images/logo.svg" alt="Easy Bank">
       </a>
-      <a href="#" class="header__hamburger-menu hide-lg">
+      <a href="#" id="mobileMenu" class="header__hamburger-menu hide-lg">
         <span></span>
         <span></span>
         <span></span>
@@ -32,9 +33,17 @@
       </ul>
       <button type="button" class="btn btn--primary hide-sm">Request Invite</button>
     </nav>
+
+    <div class="header__mobile__nav has-fade">
+      <a href="#" class="header__mobile__nav__link">Home</a>
+      <a href="#" class="header__mobile__nav__link">About</a>
+      <a href="#" class="header__mobile__nav__link">Contact</a>
+      <a href="#" class="header__mobile__nav__link">Blog</a>
+      <a href="#" class="header__mobile__nav__link">Careers</a>
+    </div>
   </header>
 
-  <!-- Home
+  Home
   About
   Contact
   Blog
@@ -109,7 +118,7 @@
 
   Request Invite
 
-  © Easybank. All Rights Reserved -->
-  
+  © Easybank. All Rights Reserved 
+  <script src="javascript/script.js"></script>
 </body>
 </html>
